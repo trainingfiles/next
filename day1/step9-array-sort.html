@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let justiceleague = ["batman","superman","aquaman","wonderwomen","cyborg","flash"];
+        console.log(justiceleague.sort());
+
+        let nums = [7,9,3,11,25,2,7];
+
+        let sortfun = function(arg1, arg2){
+            if(arg1 > arg2){
+                return 1;
+            }else if(arg1 < arg2){
+                return -1;
+            }else{
+                return 0;
+            }
+        };
+        let titlefun = function(arg1, arg2){
+            if(arg1.title > arg2.title){
+                return 1;
+            }else if(arg1.title < arg2.title){
+                return -1;
+            }else{
+                return 0;
+            }
+        };
+
+        let justiceleague_details = [
+            { 
+                title : "batman"
+            },
+            { 
+                title : "superman"
+            },
+            { 
+                title : "aquaman"
+            },
+            { 
+                title : "wonderwomen"
+            },
+            { 
+                title : "cyborg"
+            },
+            { 
+                title : "flash"
+            },
+        ];
+        console.log(nums.sort(sortfun));
+        console.log(justiceleague_details.sort(titlefun));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

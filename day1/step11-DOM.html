@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1200px;
+            height: 600px;
+            background-color: silver;
+            border: 1px solid darkslategrey;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .container div{
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(42, 26, 213);
+            margin: 2px;
+        };
+    </style>
+    <script>
+        function addBoxHandler(){
+            let box = document.createElement("div");
+            let container = document.getElementsByClassName("container")[0];
+            container.appendChild(box);
+        }
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", addBoxHandler)
+        }
+    </script>
+</head>
+<body>
+    <button>Add box</button>
+    <div class="container"></div>
+    <script>
+        init();
+    </script>
+</body>
+</html>

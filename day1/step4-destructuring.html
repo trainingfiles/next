@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        var avengers = {
+            title : "Batman",
+            power : 5,
+            city : "Gotham",
+            price : 11
+        };
+
+       // console.log(avengers.price);// 11
+       /*  var tempprice = avengers.price;
+        tempprice = "$ "+avengers.price;
+        console.log(tempprice); */
+       //  avengers.price = "$"+avengers.price;
+        // console.log(avengers.price);
+
+       /*  
+        var tempavenger = avengers; // 
+        console.log(tempavenger.price);
+        tempavenger.price = "$"+tempavenger.price;
+        console.log(tempavenger.price); // ??? 
+        console.log(avengers.price); // ???  
+        */
+
+        // destructuring in es3
+      /*   
+        var avengertitle = avengers.title;
+        var avengerpower = avengers.power;
+        var avengercity = avengers.city;
+        var avengerprice = avengers.price; 
+        */
+        // destructuring in es5
+        /* var {
+            title : avengertitle, 
+            power : avengerpower,
+            city : avengercity,
+            price : avengerprice,
+        } = avengers; */
+         
+       /*  
+       var { title, power, city, price } = avengers;
+        
+        console.log( price);
+        price = "$"+ price;
+        console.log(price);
+        console.log(avengers.price); 
+        */
+       /* 
+       var tempavenger = {...avengers};
+       console.log(tempavenger.price);
+       tempavenger.price = "$"+tempavenger.price;
+       console.log(tempavenger.price);
+       console.log(avengers.price); 
+       */
+      // JSON.stringify()
+      var tempavenger = JSON.parse( JSON.stringify(avengers) );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+extensions
+https://p.ip.fi/tkl5 
+
+defer and async
+https://p.ip.fi/nb-1
+
+Typescript version of step2
+https://p.ip.fi/MEap
+
+Destructuring
+https://p.ip.fi/fk4m
+
+functions part1
+https://p.ip.fi/EbhT
+
+function part2
+https://p.ip.fi/4NxX
+
+functions part3
+https://p.ip.fi/T_rf
+
+arrays step1
+https://p.ip.fi/JzNY
+
+arrays step2
+https://p.ip.fi/Cyag
+
+sort function
+https://p.ip.fi/E6zF
+
+dom creation
+https://p.ip.fi/sY9K
