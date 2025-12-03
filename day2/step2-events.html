@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Events and User Events</title>
+    <script>
+        function init(){
+            document.getElementsByTagName("h1")[1].textContent = "Welcome to your life";
+        };
+        // window.onload = init; // Microsoft
+
+        // window.addEventListener("load", init); // Mozilla
+        // window.removeEventListener("load", init); // Mozilla
+
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<!-- <body onload="init()"> -->
+<body>
+    <h1>1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+<!--     <script>
+        init();
+    </script> -->
+</body>
+</html>

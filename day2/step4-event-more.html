@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Events</title>
+    <style>
+      .container {
+        width: 1200px;
+        height: 400px;
+        background-color: rgb(200, 193, 207);
+        border: 1px solid transparent;
+        overflow: auto;
+        .box {
+          width: 80px;
+          height: 80px;
+          background-color: darkorange;
+          border: 1px solid grey;
+          margin: 5px;
+          float: left;
+          text-align: center;
+          font-family: sans-serif;
+          line-height: 80px;
+          font-weight: bold;
+          font-size: 30px;
+          color : white;
+        }
+        .box:hover {
+          cursor: pointer;
+          background-color: rgb(170, 124, 69);
+          box-shadow: 0px 0px 5px black ;
+        }
+      }
+    </style>
+    <script>
+      let count = 1;
+      let container;
+      function removeFirstBox(){
+        let firstbox = container.children[0];
+        // console.log(firstbox);
+        if(firstbox){
+            container.removeChild(firstbox);
+        }else{
+            alert("no box to remove")
+        }
+      }
+      function removeLastBox(){
+        let lastbox = container.children[container.children.length-1];
+        // console.log(firstbox);
+        if(lastbox){
+            container.removeChild(lastbox);
+        }else{
+            alert("no box to remove")
+        }
+      }
+      function init() {
+        // --------------------------------
+        document.getElementsByTagName("button")[0].addEventListener("click", removeFirstBox)
+        document.getElementsByTagName("button")[1].addEventListener("click", removeLastBox)
+        // --------------------------------
+        container = document.getElementsByClassName("container")[0];
+        // --------------------------------
+        let si = setInterval(() => {
+          addBoxHandler();
+          count++;
+          if (count > 50) {
+            clearInterval(si);
+          }
+        }, 10);
+      }
+
+      function addBoxHandler() {
+        let box = "<div class='box'>"+count+"</div>";
+        container.innerHTML += box;
+      }
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </head>
+  <body>
+    <button>Remove First</button>
+    <button>Remove Last</button>
+    <div class="container"></div>
+  </body>
+</html>

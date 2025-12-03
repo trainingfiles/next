@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Events</title>
+    <style>
+      .container {
+        width: 1200px;
+        height: 400px;
+        background-color: rgb(200, 193, 207);
+        border: 1px solid transparent;
+        overflow: auto;
+        margin: auto;
+        .box {
+          width: 80px;
+          height: 80px;
+          background-color: darkorange;
+          border: 1px solid grey;
+          margin: 5px;
+          float: left;
+          text-align: center;
+          font-family: sans-serif;
+          line-height: 80px;
+          font-weight: bold;
+          font-size: 30px;
+          color : white;
+        }
+        .box:hover {
+          cursor: pointer;
+          background-color: rgb(170, 124, 69);
+          box-shadow: 0px 0px 5px black ;
+        }
+      }
+    </style>
+    <script>
+      let count = 1;
+      let container;
+      
+      function init() {
+        container = document.getElementsByClassName("container")[0];
+        container.addEventListener("click", clickHandler);
+        // --------------------------------
+        let si = setInterval(() => {
+          addBoxHandler();
+          count++;
+          if (count > 50) {
+            clearInterval(si);
+          }
+        }, 10);
+      }
+
+      function clickHandler(event){
+       // console.log("you clicked ", event.target.className);
+       if(event.target.className == "box"){
+          container.removeChild(event.target);
+       }
+      };
+
+      function addBoxHandler() {
+        let box = document.createElement("div");
+            box.textContent = count;
+            box.setAttribute("class","box");
+        container.appendChild(box);
+      }
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>

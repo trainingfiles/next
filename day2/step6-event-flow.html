@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Flow</title>
+    <style>
+        #parentContainer{
+            width: 900px;
+            height: 450px;
+            background-color: cadetblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 100px auto;
+            text-align: center;
+        }
+        #nestedContainer{
+            text-align: center;
+            width: 600px;
+            height: 200px;
+            background-color: rgb(213, 236, 237);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #button{
+            text-align: center;
+            width: 300px;
+            height: 100px;
+            background-color: rgb(27, 52, 53);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: aliceblue;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+
+        function parentContainerClickHandler(evt){
+            console.log("click on ",evt.currentTarget.id, "you clicked on ", evt.target.id);
+        }
+        function nestedContainerClickHandler(evt){
+            console.log("click on ",evt.currentTarget.id, "you clicked on ", evt.target.id)
+        }
+        function buttonClickHandler(evt){
+            console.log("click on ",evt.currentTarget.id, "you clicked on ", evt.target.id)
+            // evt.stopPropagation();
+        }
+        function parentContainerCaptureHandler(evt){
+            console.log("click on ",evt.currentTarget.id, "you clicked on ", evt.target.id);
+        }
+        function nestedContainerCaptureHandler(evt){
+            console.log("click on ",evt.currentTarget.id, "you clicked on ", evt.target.id)
+        }
+        function buttonCaptureHandler(evt){
+            console.log("click on ",evt.currentTarget.id, "you clicked on ", evt.target.id)
+            // evt.stopPropagation();
+        }
+        function init(){
+            document.getElementById("parentContainer").addEventListener("click", parentContainerClickHandler);
+            document.getElementById("nestedContainer").addEventListener("click", nestedContainerClickHandler);
+            document.getElementById("button").addEventListener("click", buttonClickHandler);
+            document.getElementById("button").addEventListener("click", buttonCaptureHandler, true);
+            document.getElementById("parentContainer").addEventListener("click", parentContainerCaptureHandler, true);
+            document.getElementById("nestedContainer").addEventListener("click", nestedContainerCaptureHandler, true);
+        }
+    </script>
+</head>
+<body>
+    <div id="parentContainer">
+        <div class="box">
+            <h3>Parent Container</h3>
+            <div id="nestedContainer">
+                <div class="box">
+                    <h3>Nested Container</h3>
+                    <div id="button">
+                        <h3>Box</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+create a shopping gallery
+use the client's credits to allow the client to click on the buy button
+if the credits are less than 10 don't allow the buy button to be clicked
+-->

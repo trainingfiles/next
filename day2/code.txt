@@ -1,0 +1,34 @@
+setInterval and setTimeout
+https://p.ip.fi/lqdD
+
+system events
+https://p.ip.fi/P1q7
+
+user events
+https://p.ip.fi/SD9v
+
+stop event
+https://p.ip.fi/exZZ
+
+event object
+https://p.ip.fi/FHbj
+
+remove firstBox and lastBox
+https://p.ip.fi/-5BX
+
+event-flow-start
+https://p.ip.fi/F_3G
+
+event flow complete
+https://p.ip.fi/UPtf
+
+promise fun
+https://p.ip.fi/F2m5
+
+promise steps
+https://p.ip.fi/zKP5
+
+
+promise async await
+https://p.ip.fi/lui-
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Events</title>
+    <style>
+        .container{
+            width: 1200px;
+            height: 400px;
+            background-color: rgb(200, 193, 207);
+            border: 1px solid transparent;
+            overflow: auto;
+            .box{
+                width: 100px;
+                height: 100px;
+                background-color: darkorange;
+                border: 1px solid grey;
+                margin: 5px;
+                float: left;
+            }
+        }
+    </style>
+    <script>
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("mouseover", addBoxHandler)
+            document.getElementsByTagName("button")[0].addEventListener("click", addBoxHandler)
+            
+            document.getElementsByTagName("button")[1].addEventListener("click", stopBoxHandler)
+        };
+        function stopBoxHandler(){
+            document.getElementsByTagName("button")[0].removeEventListener("mouseover", addBoxHandler)
+        }
+        function addBoxHandler(){
+            let box = "<div class='box'></div>";
+            let container = document.getElementsByClassName("container")[0];
+            container.innerHTML += box;
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Stop Adding Box</button>
+    <div class="container"></div>
+</body>
+</html>
