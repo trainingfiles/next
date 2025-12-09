@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Steps</title>
+    <!--  -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- 
+    <script type="text/jsx">
+      const domNode = document.getElementById('app');
+      const root = ReactDOM.createRoot(domNode);
+      root.render(<h1>Develop. Preview. Ship.</h1>);
+    </script> 
+    -->
+    <style>
+        .box{
+            color: darkorange;
+            font-family: sans-serif;
+        }
+    </style>
+    <script type="text/babel">
+        /*         
+        function init(){
+           let heading = document.createElement("h1");
+           heading.innerText = "Welcome to your life !!!";
+           heading.setAttribute("class", "box");
+           //------------------------------------- 
+           let app = document.getElementById("app");
+           app.appendChild(heading);
+        }
+        document.addEventListener("DOMContentLoaded", init); */
+       /*  
+       function init(){
+           let listitem1 = React.createElement("li",{class:'box'},"List Item 1");
+           let listitem2 = React.createElement("li",{class:'box'},"List Item 2");
+           let listitem3 = React.createElement("li",{class:'box'},"List Item 3");
+           let listitem4 = React.createElement("li",{class:'box'},"List Item 4");
+           let listitem5 = React.createElement("li",{class:'box'},"List Item 5");
+           let list = React.createElement("ul",null,[listitem1, listitem2, listitem3, listitem4, listitem5]);
+           ReactDOM.createRoot(document.getElementById("app")).render(list); 
+        }
+        document.addEventListener("DOMContentLoaded", init); 
+        */
+        let List = () => {
+        let title1 = "valtech";
+        return <>
+                <ul style={ {'backgroundColor': 'red'} }>
+                    <li>{title1}</li>
+                    <li>List Item {1+1}</li>
+                    <li className="box">List Item 3</li>
+                    <li>List Item {2+2}</li>
+                    <li>List Item 5</li>
+                </ul>
+                <hr/>
+                <ul style={ {'backgroundColor': 'yellow'} }>
+                    <li className="box">{title1}</li>
+                    <li>List Item 2</li>
+                    <li>List Item 3</li>
+                    <li className="box">List Item 4</li>
+                    <li>List Item 5</li>
+                </ul>
+                </>
+                
+        };
+       ReactDOM.createRoot(document.getElementById("app")).render(<div><List/><List/><List/></div>);
+    </script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+</html>

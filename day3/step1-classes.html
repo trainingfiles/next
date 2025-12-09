@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        constructor
+        properties
+            private
+                get
+                set
+            public
+            static
+        methods
+            private
+            public
+            static
+        
+        inheritance
+        super
+
+        */
+       class Human{
+        canWalk = "I can walk";
+        superPower = "none";
+        constructor(power){
+            this.superPower = power;
+        }
+       };
+       
+       class Hero extends Human{
+        // public
+        title = "default title"
+        firstname = "";
+        lastname = "";
+        static version = 1001;
+        #mission = "my secret mission";
+        constructor(htitle, fname, lname, spower){
+            super(spower);
+            this.title = htitle;
+            this.firstname = fname;
+            this.lastname = lname;
+            console.log("constructor was called");
+        };
+        fullname(){
+            return this.firstname+" "+this.lastname;
+        }
+        get mission(){
+            return this.#mission;
+        }
+        set mission(nmission){
+            this.#mission = nmission;
+        }
+       };
+
+       let hero = new Hero("Batman","Bruce","Wayne","i can fly");
+       console.log(hero.title);
+       console.log(hero.fullname());
+       console.log(hero.mission);
+       hero.mission = "save the world";
+       console.log(hero.mission);
+       console.log(hero.version);// no response
+       console.log(Hero.version);// 1001
+       console.log(hero.canWalk);//  
+       console.log(hero.superPower);//  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

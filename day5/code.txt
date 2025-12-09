@@ -1,0 +1,15 @@
+conditional rendering
+https://p.ip.fi/0gNV
+=============================================
+inline style 
+https://p.ip.fi/Jsch
+=============================================
+css 
+https://p.ip.fi/4dBD
+=============================================
+style modules
+https://p.ip.fi/0fok
+=============================================
+useEffect Hook
+https://p.ip.fi/mo9n
+
